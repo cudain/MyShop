@@ -35,29 +35,29 @@ namespace MyShop.DataAccess.InMemory
 
         public void update (Product product)
         {
-            Product productToUpdate = products.Find(p ==> p.Id == product.Id);
+            Product productToUpdate = products.Find(p => p.Id == product.Id);
 
-            if (productToUpdate !== Null)
+            if (productToUpdate != null)
             {
                 productToUpdate = product;
             }
             else
             {
-                throw new Exception("Product Not Found")
-            }
+                throw new Exception("Product Not Found");
+            };
         }
 
         public Product Find(string Id)
         {
-            Product product = products.Find(p ==> p.Id == Id);
+            Product product = products.Find(p => p.Id == Id);
 
-            if (product !== Null)
+            if (product != null)
             {
                 return product;
             }
             else
             {
-                throw new Exception("Product Not Found")
+                throw new Exception("Product Not Found");
             }
         }
 
@@ -68,15 +68,15 @@ namespace MyShop.DataAccess.InMemory
 
         public void Delete(string Id)
         {
-            Product productToDelete = products.Find(p ==> p.Id == product.Id);
+            Product productToDelete = products.Find(p => p.Id == Id);
 
-            if (productToDelete !== Null)
+            if (productToDelete != null)
             {
                 products.Remove(productToDelete);
             }
             else
             {
-                throw new Exception("Product Not Found")
+                throw new Exception("Product Not Found");
             }
         }
     }
